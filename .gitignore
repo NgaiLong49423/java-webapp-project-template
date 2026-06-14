@@ -1,0 +1,27 @@
+# Compiled Java files
+*.class
+
+# Build folders
+target/
+build/
+out/
+
+# IDE files
+.idea/
+.vscode/
+*.iml
+nbproject/private/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Environment files
+.env
+application-local.properties
+
+# Maven wrapper generated files
+.mvn/wrapper/maven-wrapper.jar
