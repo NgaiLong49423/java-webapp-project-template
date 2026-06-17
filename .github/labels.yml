@@ -1,0 +1,114 @@
+# Danh sách label chuẩn cho GitHub repository
+# File này dùng làm cấu hình tham khảo để tạo lại label cho các repo mới.
+# GitHub không tự động đọc file này để tạo label.
+# Có thể dùng agent hoặc GitHub CLI để tạo label dựa trên danh sách này.
+
+labels:
+  # Core work item types
+  - name: "🐞 Bug"
+    color: "d73a4a"
+    description: "Lỗi trong hệ thống cần được sửa."
+
+  - name: "✨ Enhancement"
+    color: "a2eeef"
+    description: "Cải tiến hoặc nâng cấp chức năng hiện có mà không phải sửa lỗi."
+
+  - name: "🚀 Feature"
+    color: "f9d0c4"
+    description: "Chức năng mới hoặc nghiệp vụ mới cần được triển khai trong hệ thống."
+
+  - name: "🧾 User Story"
+    color: "c5def5"
+    description: "User Story mô tả nhu cầu hoặc mục tiêu của người dùng dưới góc nhìn nghiệp vụ."
+
+  - name: "📐 NFR"
+    color: "5319e7"
+    description: "Yêu cầu phi chức năng như hiệu năng, bảo mật, độ ổn định, khả năng mở rộng hoặc khả năng bảo trì."
+
+  - name: "🔍 Investigation"
+    color: "bfd4f2"
+    description: "Cần phân tích, nghiên cứu hoặc xác minh nguyên nhân trước khi triển khai."
+
+  - name: "📋 Task"
+    color: "cfd3d7"
+    description: "Công việc kỹ thuật, setup, tài liệu hoặc việc cần xử lý trong dự án."
+
+  - name: "♻️ Refactor"
+    color: "0e8a16"
+    description: "Cải thiện cấu trúc mã nguồn mà không thay đổi chức năng của hệ thống."
+
+  - name: "⚡ Performance"
+    color: "5319e7"
+    description: "Cải thiện tốc độ xử lý, tối ưu tài nguyên hoặc giảm thời gian phản hồi."
+
+  - name: "🔒 Security"
+    color: "6f42c1"
+    description: "Thay đổi liên quan đến bảo mật, lỗ hổng, xác thực hoặc phân quyền."
+
+  - name: "🧪 Testing"
+    color: "bfdc6b"
+    description: "Công việc kiểm thử, test case, xác minh lỗi hoặc QA."
+
+  # Technical areas
+  - name: "🛠️ Backend"
+    color: "8b5cf6"
+    description: "Công việc liên quan đến logic phía server và xử lý nghiệp vụ."
+
+  - name: "🎨 Frontend"
+    color: "0e8a16"
+    description: "Công việc liên quan đến UI, UX và phát triển phía client."
+
+  - name: "🗄️ Database"
+    color: "5319e7"
+    description: "Công việc liên quan đến thiết kế database, schema, query hoặc tối ưu dữ liệu."
+
+  - name: "📚 Documentation"
+    color: "f9c74f"
+    description: "Tài liệu, hướng dẫn, đặc tả hoặc nội dung liên quan đến dự án."
+
+  # Work status
+  - name: "⛔ Blocked"
+    color: "b60205"
+    description: "Công việc đang bị chặn bởi yếu tố khác và chưa thể tiếp tục thực hiện."
+
+  - name: "🟡 Ready for Review"
+    color: "fbca04"
+    description: "Công việc đã hoàn thành và sẵn sàng để được review."
+
+  - name: "🧭 Needs Triage"
+    color: "ededed"
+    description: "Issue cần được xem xét, phân loại hoặc làm rõ thêm."
+
+  # Priority
+  - name: "🔴 priority-high"
+    color: "d93f0b"
+    description: "Công việc có mức độ ưu tiên cao."
+
+  - name: "🟠 priority-medium"
+    color: "fbca04"
+    description: "Công việc có mức độ ưu tiên trung bình."
+
+  - name: "🟢 priority-low"
+    color: "0e8a16"
+    description: "Công việc có mức độ ưu tiên thấp."
+
+  - name: "🚨 Critical"
+    color: "b60205"
+    description: "Công việc hoặc lỗi có mức độ nghiêm trọng cao, cần ưu tiên xử lý ngay."
+
+  # Common GitHub labels
+  - name: "❓ Question"
+    color: "d876e3"
+    description: "Câu hỏi hoặc nội dung cần thảo luận thêm."
+
+  - name: "📌 Duplicate"
+    color: "cfd3d7"
+    description: "Issue bị trùng với issue khác."
+
+  - name: "🚫 Invalid"
+    color: "e4e669"
+    description: "Issue không hợp lệ hoặc không đủ thông tin."
+
+  - name: "🙅 Wontfix"
+    color: "ffffff"
+    description: "Issue sẽ không được xử lý."
