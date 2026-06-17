@@ -1,0 +1,95 @@
+name: Task
+description: Ghi nhận công việc kỹ thuật, tài liệu hoặc việc cần xử lý
+title: "task: "
+labels: ["📋 Task"]
+body:
+  - type: input
+    id: task_name
+    attributes:
+      label: "1. Tên công việc"
+      description: "Ghi tên công việc cần thực hiện."
+      placeholder: "Ví dụ: Setup cấu trúc thư mục, Viết README, Vẽ ERD..."
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: "2. Mô tả công việc"
+      description: "Mô tả rõ công việc này cần làm gì. (Task là một công việc cần làm trong dự án, ví dụ setup cấu trúc thư mục, viết README, vẽ ERD, tạo database script)."
+      placeholder: "Mô tả chi tiết công việc..."
+    validations:
+      required: true
+  - type: textarea
+    id: rationale
+    attributes:
+      label: "3. Lý do cần làm"
+      description: "Giải thích vì sao công việc này cần thiết cho dự án."
+      placeholder: "Lý do..."
+    validations:
+      required: true
+  - type: checkboxes
+    id: task_type
+    attributes:
+      label: "4. Loại công việc"
+      description: "Chọn loại công việc phù hợp."
+      options:
+        - label: "Setup dự án"
+        - label: "Tài liệu (Document)"
+        - label: "Database (Cơ sở dữ liệu)"
+        - label: "Refactor code (Tối ưu cấu trúc code)"
+        - label: "Thiết kế giao diện (UI/UX)"
+        - label: "Kiểm thử (Testing)"
+        - label: "Nghiên cứu (Research)"
+        - label: "Dọn dẹp repo"
+        - label: "Khác"
+  - type: textarea
+    id: checklist
+    attributes:
+      label: "5. Các việc cần hoàn thành (Checklist)"
+      description: "Liệt kê checklist các công việc cụ thể."
+      placeholder: |
+        - [ ] 
+        - [ ] 
+        - [ ] 
+    validations:
+      required: true
+  - type: textarea
+    id: files_related
+    attributes:
+      label: "6. File hoặc thư mục liên quan"
+      description: "Ghi các file hoặc thư mục có liên quan."
+      placeholder: |
+        Ví dụ:
+        - README.md
+        - docs/
+        - database/schema.sql
+        - App/
+    validations:
+      required: false
+  - type: dropdown
+    id: priority
+    attributes:
+      label: "7. Mức độ ưu tiên"
+      description: "Chọn mức độ ưu tiên phù hợp cho công việc."
+      options:
+        - "Thấp (Low)"
+        - "Trung bình (Medium)"
+        - "Cao (High)"
+    validations:
+      required: true
+  - type: textarea
+    id: definition_of_done
+    attributes:
+      label: "8. Tiêu chí hoàn thành"
+      description: "Mô tả khi nào công việc này được xem là hoàn thành."
+      placeholder: "Mô tả tiêu chí hoàn thành..."
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: "9. Ghi chú thêm"
+      description: "Ghi thêm thông tin khác nếu cần."
+      placeholder: "Nhập ghi chú thêm..."
+    validations:
+      required: false

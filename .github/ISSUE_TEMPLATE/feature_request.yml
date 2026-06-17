@@ -1,0 +1,99 @@
+name: Feature Request
+description: Đề xuất hoặc ghi nhận yêu cầu chức năng mới (FR - Functional Requirement)
+title: "feat: "
+labels: ["🚀 Feature"]
+body:
+  - type: input
+    id: feature_name
+    attributes:
+      label: "1. Tên chức năng"
+      description: "Ghi tên chức năng cần thêm hoặc cải thiện."
+      placeholder: "Ví dụ: Đăng nhập bằng Google, Xuất báo cáo Excel..."
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: "2. Mô tả chức năng"
+      description: "Mô tả chức năng này dùng để làm gì. (Feature là tính năng. Functional Requirement (FR) là yêu cầu chức năng mà hệ thống cần thực hiện)."
+      placeholder: "Mô tả chi tiết chức năng..."
+    validations:
+      required: true
+  - type: checkboxes
+    id: roles
+    attributes:
+      label: "3. Người dùng liên quan"
+      description: "Chọn các đối tượng người dùng tương tác với chức năng này."
+      options:
+        - label: "Guest (Khách vãng lai)"
+        - label: "User (Thành viên thường)"
+        - label: "Admin (Quản trị viên)"
+        - label: "Staff (Nhân viên)"
+        - label: "Manager (Quản lý)"
+        - label: "Khác"
+  - type: textarea
+    id: rationale
+    attributes:
+      label: "4. Lý do cần chức năng"
+      description: "Giải thích vì sao chức năng này cần thiết cho dự án/người dùng."
+      placeholder: "Lý do..."
+    validations:
+      required: true
+  - type: textarea
+    id: workflow
+    attributes:
+      label: "5. Luồng hoạt động mong muốn"
+      description: "Mô tả các bước hoạt động chính của chức năng."
+      placeholder: |
+        1. Người dùng click vào...
+        2. Hệ thống xử lý...
+        3. Kết quả trả về...
+    validations:
+      required: true
+  - type: textarea
+    id: expected_result
+    attributes:
+      label: "6. Kết quả mong muốn"
+      description: "Mô tả kết quả sau khi chức năng được hoàn thành."
+      placeholder: "Ví dụ: Người dùng đăng nhập thành công và được chuyển hướng về trang chủ."
+    validations:
+      required: true
+  - type: textarea
+    id: definition_of_done
+    attributes:
+      label: "7. Tiêu chí hoàn thành"
+      description: "Ghi các điều kiện để biết chức năng này đã hoàn thành."
+      placeholder: |
+        - [ ] Tích hợp thành công nút đăng nhập.
+        - [ ] Kiểm thử luồng chạy không bị lỗi.
+        - [ ] Ghi log chi tiết khi đăng nhập.
+    validations:
+      required: true
+  - type: textarea
+    id: references
+    attributes:
+      label: "8. Tài liệu hoặc thiết kế liên quan"
+      description: "Thêm link tài liệu, hình ảnh, wireframe (bản phác thảo giao diện), ERD (sơ đồ quan hệ thực thể), use case hoặc ghi 'Không có'."
+      placeholder: "Link Figma, thiết kế database, tài liệu đặc tả..."
+    validations:
+      required: false
+  - type: dropdown
+    id: priority
+    attributes:
+      label: "9. Mức độ ưu tiên"
+      description: "Chọn mức độ ưu tiên cho yêu cầu chức năng này."
+      options:
+        - "Thấp (Low)"
+        - "Trung bình (Medium)"
+        - "Cao (High)"
+        - "Bắt buộc (Critical)"
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: "10. Ghi chú thêm"
+      description: "Ghi thêm thông tin khác nếu cần."
+      placeholder: "Nhập ghi chú thêm..."
+    validations:
+      required: false

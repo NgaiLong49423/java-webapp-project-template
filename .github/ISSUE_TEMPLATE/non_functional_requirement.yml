@@ -1,0 +1,94 @@
+name: Non-Functional Requirement
+description: Ghi nhận yêu cầu phi chức năng của hệ thống (NFR - Non-Functional Requirement)
+title: "nfr: "
+labels: ["📐 NFR"]
+body:
+  - type: input
+    id: nfr_name
+    attributes:
+      label: "1. Tên yêu cầu phi chức năng"
+      description: "Ghi tên yêu cầu phi chức năng cần thực hiện. (NFR là yêu cầu về chất lượng hệ thống như hiệu năng, bảo mật, khả năng mở rộng, độ ổn định)."
+      placeholder: "Ví dụ: Mã hóa mật khẩu người dùng, Tối ưu thời gian load trang..."
+    validations:
+      required: true
+  - type: checkboxes
+    id: nfr_type
+    attributes:
+      label: "2. Loại yêu cầu"
+      description: "Chọn loại yêu cầu phi chức năng phù hợp."
+      options:
+        - label: "Performance (Hiệu năng, tốc độ phản hồi)"
+        - label: "Security (Bảo mật)"
+        - label: "Usability (Tính dễ sử dụng, trải nghiệm)"
+        - label: "Reliability (Độ tin cậy, độ ổn định)"
+        - label: "Maintainability (Khả năng bảo trì)"
+        - label: "Scalability (Khả năng mở rộng)"
+        - label: "Compatibility (Khả năng tương thích)"
+        - label: "Accessibility (Khả năng tiếp cận)"
+        - label: "Khác"
+  - type: textarea
+    id: description
+    attributes:
+      label: "3. Mô tả yêu cầu"
+      description: "Mô tả rõ hệ thống cần đạt được điều gì."
+      placeholder: "Mô tả chi tiết yêu cầu..."
+    validations:
+      required: true
+  - type: textarea
+    id: rationale
+    attributes:
+      label: "4. Lý do cần yêu cầu này"
+      description: "Giải thích vì sao yêu cầu phi chức năng này quan trọng đối với hệ thống."
+      placeholder: "Lý do..."
+    validations:
+      required: true
+  - type: textarea
+    id: metrics
+    attributes:
+      label: "5. Tiêu chí đo lường"
+      description: "Ghi tiêu chí cụ thể để kiểm tra yêu cầu này."
+      placeholder: |
+        Ví dụ:
+        - Trang đăng nhập phản hồi dưới 2 giây.
+        - Mật khẩu phải được mã hóa BCrypt trước khi lưu vào database.
+        - Giao diện hiển thị tốt trên màn hình mobile.
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: "6. Phạm vi ảnh hưởng"
+      description: "Ghi chức năng, module (phần chức năng hoặc khu vực code) hoặc tài liệu bị ảnh hưởng."
+      placeholder: "Ví dụ: Module Authenticate, toàn bộ database..."
+    validations:
+      required: false
+  - type: dropdown
+    id: priority
+    attributes:
+      label: "7. Mức độ ưu tiên"
+      description: "Chọn mức độ ưu tiên của yêu cầu này."
+      options:
+        - "Thấp (Low)"
+        - "Trung bình (Medium)"
+        - "Cao (High)"
+        - "Bắt buộc (Critical)"
+    validations:
+      required: true
+  - type: textarea
+    id: definition_of_done
+    attributes:
+      label: "8. Tiêu chí hoàn thành"
+      description: "Ghi các điều kiện để biết yêu cầu này đã hoàn thành."
+      placeholder: |
+        - [ ] 
+        - [ ] 
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: "9. Ghi chú thêm"
+      description: "Ghi thêm thông tin khác nếu cần."
+      placeholder: "Nhập ghi chú thêm..."
+    validations:
+      required: false

@@ -1,0 +1,91 @@
+name: Bug Report
+description: Báo lỗi xảy ra trong dự án
+title: "fix: "
+labels: ["🐞 Bug"]
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: "1. Mô tả lỗi"
+      description: "Mô tả ngắn gọn lỗi đang xảy ra."
+      placeholder: "Mô tả chi tiết lỗi tại đây..."
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: "2. Các bước tái hiện lỗi"
+      description: "Ghi rõ từng bước để người khác có thể tái hiện (tạo lại) lỗi."
+      placeholder: |
+        1. 
+        2. 
+        3. 
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: "3. Kết quả mong muốn"
+      description: "Mô tả điều đáng lẽ phải xảy ra."
+      placeholder: "Mô tả kết quả mong muốn tại đây..."
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: "4. Kết quả thực tế"
+      description: "Mô tả điều thực tế đã xảy ra."
+      placeholder: "Mô tả kết quả thực tế tại đây..."
+    validations:
+      required: true
+  - type: textarea
+    id: screenshot-logs
+    attributes:
+      label: "5. Ảnh chụp màn hình hoặc Log"
+      description: "Thêm ảnh chụp màn hình, log lỗi hoặc thông báo lỗi nếu có. (Log là thông tin hệ thống in ra để hỗ trợ kiểm tra và debug. Debug là quá trình tìm và sửa lỗi)."
+      placeholder: "Kéo thả ảnh hoặc dán log lỗi vào đây..."
+    validations:
+      required: false
+  - type: textarea
+    id: environment
+    attributes:
+      label: "6. Môi trường chạy"
+      description: "Cung cấp thông tin chi tiết về môi trường chạy ứng dụng."
+      value: |
+        - Hệ điều hành: 
+        - Trình duyệt: 
+        - Phiên bản Java: 
+        - Server: 
+        - Database: 
+        - Công cụ/IDE: 
+    validations:
+      required: false
+  - type: dropdown
+    id: severity
+    attributes:
+      label: "7. Mức độ ảnh hưởng"
+      description: "Chọn mức độ ảnh hưởng của lỗi."
+      options:
+        - "Thấp: lỗi nhỏ, không ảnh hưởng nhiều"
+        - "Trung bình: ảnh hưởng một phần chức năng"
+        - "Cao: chức năng chính không hoạt động"
+        - "Nghiêm trọng: hệ thống không thể sử dụng"
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: "8. Ghi chú thêm"
+      description: "Ghi thêm thông tin khác nếu cần."
+      placeholder: "Nhập ghi chú thêm..."
+    validations:
+      required: false
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: "9. Checklist xác nhận"
+      options:
+        - label: "Tôi xác nhận lỗi này chưa được báo cáo trước đây."
+          required: true
+        - label: "Tôi đã cung cấp đầy đủ thông tin môi trường và các bước tái hiện lỗi."
+          required: true
