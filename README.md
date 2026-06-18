@@ -64,6 +64,7 @@ Giải thích ngắn cấu trúc thư mục chính của repo (repository - kho 
 ```text
 .
 ├── App/
+├── agent/
 ├── docs/
 ├── database/
 ├── .github/
@@ -75,6 +76,7 @@ Giải thích ngắn cấu trúc thư mục chính của repo (repository - kho 
 
 Giải thích:
 * `App/`: nơi chứa source code (mã nguồn) chính của ứng dụng.
+* `agent/`: nơi chứa các skill, orchestrator, rules và tài liệu liên quan để agent làm việc 
 * `docs/`: nơi chứa tài liệu dự án.
 * `database/`: nơi chứa script (kịch bản mã lệnh) database.
 * `.github/`: nơi chứa cấu hình GitHub như issue template (mẫu báo lỗi/công việc), pull request template (mẫu yêu cầu gộp nhánh) và label template (mẫu nhãn phân loại).
