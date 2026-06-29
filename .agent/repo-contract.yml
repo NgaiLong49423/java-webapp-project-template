@@ -1,0 +1,24 @@
+project_type: java-webapp
+canonical_docs:
+  requirements: docs/requirements/SRS.md
+  project_overview: README.md
+  changelog: CHANGELOG.md
+  contribution_rules: CONTRIBUTING.md
+  database_schema: database/schema.sql
+  labels: .github/labels.yml
+
+doc_sync_rules:
+  - when: docs/requirements/SRS.md changes
+    check:
+      - README.md
+      - CHANGELOG.md
+      - .github/ISSUE_TEMPLATE/
+  - when: database/schema.sql changes
+    check:
+      - docs/diagrams/ERD/
+      - docs/requirements/SRS.md
+      - CHANGELOG.md
+  - when: .github/labels.yml changes
+    check:
+      - .github/ISSUE_TEMPLATE/
+      - .agent/skill/

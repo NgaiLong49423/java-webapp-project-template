@@ -79,11 +79,3 @@ Dưới đây là một ví dụ minh họa về cách ghi chép nhật ký thay
 * **Ghi nhận thay đổi quan trọng:** Bất kỳ thay đổi nào liên quan trực tiếp đến cấu trúc thư mục, tài liệu, hay tập tin script cơ sở dữ liệu (`database/`) đều cần được ghi lại cẩn thận.
 
 ---
-
-## [0.1.0] - 2026-06-15
-
-### Added
-
-* Khởi tạo file `CHANGELOG.md`.
-* Thêm hướng dẫn sử dụng changelog cho template repository.
-* Thêm mẫu ghi changelog để tái sử dụng cho các dự án sau này.
