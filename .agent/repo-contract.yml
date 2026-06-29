@@ -1,6 +1,8 @@
 project_type: java-webapp
 canonical_docs:
-  requirements: docs/requirements/SRS.md
+  requirements:
+    - docs/requirements/SRS.md
+    - docs/requirements/PRD.md
   project_overview: README.md
   changelog: CHANGELOG.md
   contribution_rules: CONTRIBUTING.md
@@ -8,6 +10,12 @@ canonical_docs:
   labels: .github/labels.yml
 
 doc_sync_rules:
+  - when: docs/requirements/PRD.md changes
+    check:
+      - docs/requirements/SRS.md
+      - README.md
+      - CHANGELOG.md
+      - .github/ISSUE_TEMPLATE/
   - when: docs/requirements/SRS.md changes
     check:
       - README.md
