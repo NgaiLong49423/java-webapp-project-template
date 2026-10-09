@@ -3,7 +3,7 @@
 Default output path:
 
 ```text
-.agent/outputs/reports/DOC_CONSISTENCY_REPORT.md
+.agents/outputs/reports/DOC_CONSISTENCY_REPORT.md
 ```
 
 ## Template
@@ -45,13 +45,13 @@ Choose one:
 | `.github/labels.yml` | GitHub labels | Reviewed / Missing / Skipped | |
 | `.github/ISSUE_TEMPLATE/` | Issue templates | Reviewed / Missing / Skipped | |
 | `AGENTS.md` | Agent instructions | Reviewed / Missing / Skipped | |
-| `.agent/repo-contract.yml` | Repo contract | Reviewed / Missing / Skipped | |
+| `.agents/repo-contract.yml` | Repo contract | Reviewed / Missing / Skipped | |
 
 ## Findings
 
 | ID | Severity | Area | Problem | Evidence | Recommended Fix | Owner Decision Needed |
 |---|---|---|---|---|---|---|
-| DOC-001 | Major | Structure | README says `agent/`, repo uses `.agent/` | `README.md` folder tree vs actual folder | Update README path | No |
+| DOC-001 | Major | Structure | README says `agent/`, repo uses `.agents/` | `README.md` folder tree vs actual folder | Update README path | No |
 | DOC-002 | Critical | Database | SRS and schema define different core entity names | SRS: `Customer`; schema: no customer table | Decide canonical entity model | Yes |
 
 ## Cross-Document Checks
@@ -87,7 +87,7 @@ Choose one:
 |---|---|
 | `README.md` | Folder structure drift |
 | `docs/requirements/SRS.md` | Requirement/database mismatch |
-| `.agent/repo-contract.yml` | Missing or outdated canonical paths |
+| `.agents/repo-contract.yml` | Missing or outdated canonical paths |
 
 ## Final Recommendation
 
@@ -111,7 +111,7 @@ Critical: X
 Major: X
 Minor: X
 Info: X
-Report: .agent/outputs/reports/DOC_CONSISTENCY_REPORT.md
+Report: .agents/outputs/reports/DOC_CONSISTENCY_REPORT.md
 
 Top issues:
 1. ...

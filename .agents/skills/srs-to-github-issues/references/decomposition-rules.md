@@ -42,8 +42,8 @@ Bad split:
 ```text
 Create DAO
 Create Service
-Create Servlet
-Create JSP
+Create web handler
+Create user interface
 ```
 
 Better split:

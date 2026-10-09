@@ -8,7 +8,7 @@ body:
     attributes:
       label: "1. Tên chức năng"
       description: "Ghi tên chức năng cần thêm hoặc cải thiện."
-      placeholder: "Ví dụ: Đăng nhập bằng Google, Xuất báo cáo Excel..."
+      placeholder: "Ví dụ: Cập nhật hồ sơ, xuất báo cáo..."
     validations:
       required: true
   - type: textarea
@@ -19,18 +19,14 @@ body:
       placeholder: "Mô tả chi tiết chức năng..."
     validations:
       required: true
-  - type: checkboxes
-    id: roles
+  - type: input
+    id: affected_roles
     attributes:
-      label: "3. Người dùng liên quan"
-      description: "Chọn các đối tượng người dùng tương tác với chức năng này."
-      options:
-        - label: "Guest (Khách vãng lai)"
-        - label: "User (Thành viên thường)"
-        - label: "Admin (Quản trị viên)"
-        - label: "Staff (Nhân viên)"
-        - label: "Manager (Quản lý)"
-        - label: "Khác"
+      label: "3. Người dùng hoặc vai trò bị ảnh hưởng (nếu có)"
+      description: "Ghi các nhóm người dùng liên quan theo dự án; không cần điền nếu không áp dụng."
+      placeholder: "Vai trò hoặc nhóm người dùng..."
+    validations:
+      required: false
   - type: textarea
     id: rationale
     attributes:
@@ -55,7 +51,7 @@ body:
     attributes:
       label: "6. Kết quả mong muốn"
       description: "Mô tả kết quả sau khi chức năng được hoàn thành."
-      placeholder: "Ví dụ: Người dùng đăng nhập thành công và được chuyển hướng về trang chủ."
+      placeholder: "Mô tả kết quả quan sát được sau khi chức năng hoàn thành."
     validations:
       required: true
   - type: textarea
@@ -73,8 +69,8 @@ body:
     id: references
     attributes:
       label: "8. Tài liệu hoặc thiết kế liên quan"
-      description: "Thêm link tài liệu, hình ảnh, wireframe (bản phác thảo giao diện), ERD (sơ đồ quan hệ thực thể), use case hoặc ghi 'Không có'."
-      placeholder: "Link Figma, thiết kế database, tài liệu đặc tả..."
+      description: "Thêm link yêu cầu, tài liệu hoặc thiết kế liên quan; ghi 'Không có' nếu chưa có."
+      placeholder: "Link tài liệu hoặc thiết kế liên quan..."
     validations:
       required: false
   - type: dropdown
