@@ -1,11 +1,11 @@
 ---
-name: changelog-automation
+name: changelog-automatic
 description: "Standardize changelog updates, git tag versioning, release notes, and commit conventions. Prefer a lightweight CHANGELOG.md + git tag workflow for small documentation or student projects; only introduce automation when explicitly needed."
 risk: medium
 source: customized
-version: v1.0.0
+version: v1.1.0
 created_date: 2026-06-29
-last_updated_date: 2026-06-29
+last_updated_date: 2026-10-09
 ---
 
 # Changelog Automation
@@ -17,6 +17,8 @@ This skill supports both:
 - **Automated workflow**: tools such as `standard-version`, `semantic-release`, GitHub Actions, `git-cliff`, or `commitizen`.
 
 For small projects, documentation repositories, school projects, or repositories without a formal release process, prefer the **minimal workflow** by default.
+
+When selecting files or commits to inspect, exclude `docs/diagrams/` before traversal or input selection. Never enumerate, read, search, parse, validate, create, edit, move, or delete anything under that path, and do not inspect links that point into it. Do not scan the repository broadly and filter afterward.
 
 ---
 

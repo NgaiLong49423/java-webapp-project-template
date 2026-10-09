@@ -15,15 +15,15 @@ Keep the real `AGENTS.md` short. It should guide agents to the right sources, no
 - Changelog: `CHANGELOG.md`
 - Contribution rules: `CONTRIBUTING.md`
 - Database schema: `database/schema.sql`
-- Agent contract: `.agent/repo-contract.yml`
+- Agent contract: `.agents/repo-contract.yml`
 
 ## Project Layout
 
-- App source: `App/`
+- App source: `app/`
 - Database scripts: `database/`
 - Documentation: `docs/`
 - GitHub config: `.github/`
-- Agent skills and outputs: `.agent/`
+- Agent skills and outputs: `.agents/`
 
 ## Documentation Rules
 

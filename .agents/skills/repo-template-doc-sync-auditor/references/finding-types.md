@@ -9,9 +9,9 @@ The repository structure described in docs does not match the actual folder layo
 Examples:
 
 ```text
-README.md says `agent/`, but the repo uses `.agent/`.
-README.md says source code is under `src/`, but the repo uses `App/`.
-AGENTS.md says reports go to `.agent/reports/`, but the repo uses `.agent/outputs/reports/`.
+README.md says `agent/`, but the repo uses `.agents/`.
+README.md says source code is under `src/`, but the repo uses `app/`.
+AGENTS.md says reports go to `.agents/reports/`, but the repo uses `.agents/outputs/reports/`.
 ```
 
 Typical severity:
@@ -158,8 +158,8 @@ SRS.md does not define booking statuses.
 ```
 
 ```text
-SRS.md says SQL Server.
-database/README.md says MySQL.
+SRS.md specifies one database technology.
+database/README.md specifies a different database technology.
 ```
 
 Severity:
@@ -201,13 +201,13 @@ Agent-facing docs conflict.
 Examples:
 
 ```text
-AGENTS.md says reports go to `.agent/reports/`.
-repo-contract.yml says `.agent/outputs/reports/`.
+AGENTS.md says reports go to `.agents/reports/`.
+repo-contract.yml says `.agents/outputs/reports/`.
 ```
 
 ```text
-SKILL.md says active skills are under `.agent/skill/`.
-repo uses `.agent/skills/active/`.
+SKILL.md says active skills are under `.agents/skill/`.
+repo uses `.agents/skills/active/`.
 ```
 
 Severity:

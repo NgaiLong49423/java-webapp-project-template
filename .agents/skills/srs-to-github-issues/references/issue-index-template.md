@@ -3,7 +3,7 @@
 Create this file at:
 
 ```text
-.agent/outputs/drafts/github-issues/ISSUE_INDEX.md
+.agents/outputs/drafts/github-issues/ISSUE_INDEX.md
 ```
 
 If the repo contract defines another path, use the repo contract path.
@@ -14,7 +14,7 @@ If the repo contract defines another path, use the repo contract path.
 ## Summary
 - Source documents:
   - ...
-- Draft output directory: `.agent/outputs/drafts/github-issues/`
+- Draft output directory: `.agents/outputs/drafts/github-issues/`
 - Mode: Draft only
 - Real GitHub issues created: No
 - GitHub Project synced: No

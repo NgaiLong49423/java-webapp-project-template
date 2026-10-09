@@ -1,112 +1,20 @@
-# Database
+> **Document:** Database Starter Guide\
+> **File:** `database/README.md`\
+> **Version:** v1.0.0\
+> **Created:** 2026-06-14\
+> **Last Updated:** 2026-10-09\
+> **Status:** Template\
 
-## Mục Đích Thư Mục `database/`
+# Hướng Dẫn Thư Mục Database
 
-Thư mục `database/` dùng để lưu các file liên quan đến cơ sở dữ liệu của dự án.
+Thư mục này có thể chứa các script cơ sở dữ liệu được dự án lựa chọn. Các file SQL hiện tại chỉ là khung trống, không mặc định sản phẩm cơ sở dữ liệu hoặc cách quản lý migration.
 
-`Database` là cơ sở dữ liệu, nơi lưu trữ dữ liệu của hệ thống như người dùng, đơn hàng, sản phẩm, lịch đặt, vai trò hoặc trạng thái xử lý.
+## Các File Gợi Ý
 
-Thư mục này giúp quản lý database rõ ràng hơn, tránh việc script SQL bị để rải rác hoặc thất lạc.
+- `schema.sql`: khung schema tùy chọn, cần điều chỉnh theo cú pháp của cơ sở dữ liệu đã chọn.
+- `sample-data.sql`: dữ liệu mẫu tổng hợp nếu cần; không dùng dữ liệu cá nhân hoặc dữ liệu production.
+- `queries.sql`: các truy vấn tùy chọn phục vụ phát triển hoặc xác minh.
 
-## Cấu Trúc File
+Xóa hoặc thay thế file không phù hợp với quy trình cơ sở dữ liệu đã chọn. Nếu dự án sử dụng công cụ migration, hãy ghi rõ nguồn sự thật và vòng đời của nó tại đây; không duy trì nhiều lịch sử schema cạnh tranh nếu chưa có kế hoạch đồng bộ cụ thể.
 
-```text
-database/
-├── schema.sql
-├── sample-data.sql
-├── queries.sql
-└── README.md
-```
-
-## Ý Nghĩa Từng File
-
-### `schema.sql`
-
-File này dùng để tạo cấu trúc database.
-
-Nội dung thường có:
-* Tạo database.
-* Tạo bảng.
-* Tạo khóa chính.
-* Tạo khóa ngoại.
-* Tạo ràng buộc dữ liệu.
-
-`Schema` là cấu trúc của database, bao gồm bảng, cột, kiểu dữ liệu và quan hệ giữa các bảng.
-`Primary Key`, viết tắt là `PK`, là khóa chính dùng để định danh một dòng dữ liệu.
-`Foreign Key`, viết tắt là `FK`, là khóa ngoại dùng để liên kết bảng này với bảng khác.
-
-Ví dụ:
-```sql
-CREATE TABLE Users (
-    user_id INT PRIMARY KEY,
-    username VARCHAR(100) NOT NULL
-);
-```
-
-### `sample-data.sql`
-
-File này dùng để thêm dữ liệu mẫu cho dự án.
-
-Dữ liệu mẫu giúp:
-* Test chức năng nhanh hơn.
-* Demo dự án dễ hơn.
-* Đảm bảo người khác clone repo về có dữ liệu để chạy thử.
-
-`Sample data` là dữ liệu mẫu dùng để kiểm tra hoặc trình bày hệ thống.
-
-Ví dụ:
-```sql
-INSERT INTO Users (user_id, username)
-VALUES (1, 'admin');
-```
-
-### `queries.sql`
-
-File này dùng để lưu các câu truy vấn SQL mẫu hoặc câu truy vấn thường dùng.
-
-`Query` là câu truy vấn dùng để lấy, thêm, sửa hoặc xóa dữ liệu trong database.
-
-Ví dụ:
-```sql
-SELECT * FROM Users;
-```
-
-## Quy Tắc Làm Việc Với Database
-
-* Mọi thay đổi cấu trúc bảng nên được cập nhật trong `schema.sql`.
-* Dữ liệu mẫu nên được cập nhật trong `sample-data.sql`.
-* Các truy vấn quan trọng hoặc truy vấn dùng để test nên được ghi trong `queries.sql`.
-* Không lưu mật khẩu thật, token thật hoặc thông tin nhạy cảm trong file SQL.
-* Nếu thay đổi database, hãy cập nhật ERD trong `docs/diagrams/ERD/`.
-* Nếu thay đổi lớn, hãy cập nhật `CHANGELOG.md`.
-
-`Token` là chuỗi dùng để xác thực hoặc cấp quyền truy cập.
-`Thông tin nhạy cảm` là dữ liệu không nên công khai, ví dụ mật khẩu thật, key API, thông tin cá nhân.
-
-## Thứ Tự Chạy File SQL Đề Xuất
-
-Khi setup database cho dự án mới, có thể chạy theo thứ tự:
-
-```text
-1. schema.sql
-2. sample-data.sql
-3. queries.sql
-```
-
-Giải thích:
-* Chạy `schema.sql` trước để tạo database và bảng.
-* Chạy `sample-data.sql` sau để thêm dữ liệu mẫu.
-* Dùng `queries.sql` để kiểm tra dữ liệu hoặc test truy vấn.
-
-## Liên Kết Với Tài Liệu Khác
-
-* ERD: `docs/diagrams/ERD/`
-* Yêu cầu dự án: `docs/requirements/`
-* Tài liệu tổng quan: `README.md`
-
-`ERD` là Entity Relationship Diagram, nghĩa là sơ đồ quan hệ thực thể trong database.
-
-## Ghi Chú
-
-Thư mục `database/` trong template này chỉ chứa các file mẫu ban đầu.
-Khi tạo repository mới từ template, hãy cập nhật lại tên database, tên bảng, kiểu dữ liệu và dữ liệu mẫu cho đúng với dự án thực tế.
+Không đưa thông tin xác thực hoặc dữ liệu riêng tư có thật vào script. Cập nhật tài liệu dự án liên quan khi schema hoặc quy trình cơ sở dữ liệu thay đổi.

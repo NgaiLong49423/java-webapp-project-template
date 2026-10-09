@@ -8,14 +8,14 @@ body:
     attributes:
       label: "1. Tên công việc"
       description: "Ghi tên công việc cần thực hiện."
-      placeholder: "Ví dụ: Setup cấu trúc thư mục, Viết README, Vẽ ERD..."
+      placeholder: "Ví dụ: Setup cấu trúc thư mục, Viết README, Tạo tài liệu dự án..."
     validations:
       required: true
   - type: textarea
     id: description
     attributes:
       label: "2. Mô tả công việc"
-      description: "Mô tả rõ công việc này cần làm gì. (Task là một công việc cần làm trong dự án, ví dụ setup cấu trúc thư mục, viết README, vẽ ERD, tạo database script)."
+      description: "Mô tả rõ công việc này cần làm gì. (Task là một công việc cần làm trong dự án, ví dụ setup cấu trúc thư mục, viết README, cập nhật tài liệu hoặc database script)."
       placeholder: "Mô tả chi tiết công việc..."
     validations:
       required: true
@@ -63,7 +63,7 @@ body:
         - README.md
         - docs/
         - database/schema.sql
-        - App/
+        - app/
     validations:
       required: false
   - type: dropdown

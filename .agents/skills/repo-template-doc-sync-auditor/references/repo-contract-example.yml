@@ -1,18 +1,16 @@
 contract_version: 1
 repository:
-  purpose: reusable-java-web-project-template
+  purpose: reusable-software-project-template
   application_directory: app/
   database_directory: database/
   documentation_directory: docs/
-  agent_directory: .agents/
 canonical_docs:
   overview: README.md
-  contribution: CONTRIBUTING.md
-  changelog: CHANGELOG.md
   requirements:
     - docs/requirements/PRD.md
     - docs/requirements/SRS.md
-  database_guide: database/README.md
+  contribution: CONTRIBUTING.md
+  changelog: CHANGELOG.md
 agent_assets:
   policy: .agents/POLICY.md
   skills: .agents/skills/
@@ -23,18 +21,8 @@ local_only:
 protected_paths:
   paths:
     - docs/diagrams/
-  rule: Exclude before selecting, enumerating, or traversing inputs; never inspect linked targets inside protected paths.
+  rule: Exclude before input selection and traversal; never inspect linked targets.
 validation_inputs:
-  files:
-    - AGENTS.md
-    - README.md
-    - CONTRIBUTING.md
-    - CHANGELOG.md
-    - .agents/POLICY.md
-    - .agents/repo-contract.yml
-    - docs/README.md
-    - docs/template-maintenance.md
-    - database/README.md
   directories:
     - app/
     - database/
@@ -46,7 +34,6 @@ validation_inputs:
     - docs/requirements/
     - docs/reports/
 rules:
-  no_framework_or_dbms_default: true
   skill_folder_must_match_frontmatter_name: true
   use_relative_document_links: true
-  github_required_checks_are_not_configured_by_workflow_files: true
+  no_framework_or_dbms_default: true

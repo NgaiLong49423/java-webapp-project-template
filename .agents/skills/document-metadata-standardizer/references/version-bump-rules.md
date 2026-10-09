@@ -132,7 +132,7 @@ Use PATCH for:
 | Date format fix | `28/6` -> `2026-06-28` |
 | Broken relative link fix | Fix `docs/SRS.md` link |
 | Local link fix | Remove `file:///d:/...` |
-| Folder name correction | `agent/` -> `.agent/` |
+| Folder name correction | `agent/` -> `.agents/` |
 | Small clarification | Clarify wording without changing requirement |
 | Status metadata fix | `Active` -> `Under Review` for `v0.x.x` |
 
@@ -187,9 +187,9 @@ Use MAJOR for:
 |---|---|
 | Change core scope | Web app becomes mobile app |
 | Replace major requirements | Remove booking module and add queue-only module |
-| Change main architecture | MVC Servlet/JSP -> Spring Boot REST |
-| Change database model | SQL Server schema replaced by PostgreSQL model |
-| Change approved hardware list | Replace ESP32-CAM with another board |
+| Change main architecture | Replace one approved architecture with another |
+| Change database model | Replace one approved database model with another |
+| Change approved technology | Replace an approved technology with another |
 | Change canonical source | PRD replaces SRS as requirements source |
 | Breaking workflow change | Branch rules or release workflow are replaced |
 | Rewrite document structure | Old section references no longer apply |

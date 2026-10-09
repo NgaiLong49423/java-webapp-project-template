@@ -5,7 +5,7 @@ Use this template when auditing document metadata.
 Default output path:
 
 ```text
-.agent/outputs/reports/DOCUMENT_METADATA_REPORT.md
+.agents/outputs/reports/DOCUMENT_METADATA_REPORT.md
 ```
 
 If the output folder does not exist, recommend creating it.
@@ -178,7 +178,7 @@ Files reviewed: X
 Missing metadata: X
 Invalid metadata: X
 Version decisions needed: X
-Report: .agent/outputs/reports/DOCUMENT_METADATA_REPORT.md
+Report: .agents/outputs/reports/DOCUMENT_METADATA_REPORT.md
 
 Top issues:
 1. ...

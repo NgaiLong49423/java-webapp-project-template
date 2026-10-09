@@ -4,9 +4,9 @@ description: Convert PRD, SRS, product specs, requirement documents, or planning
 risk: critical
 source: self
 source_type: custom
-version: v1.1.0
+version: v1.2.0
 created_date: 2026-06-27
-last_updated_date: 2026-06-29
+last_updated_date: 2026-10-09
 ---
 
 # SRS to GitHub Issues
@@ -58,13 +58,16 @@ If an issue cannot be traced to a source document, do not create it as a require
 Before drafting, inspect relevant files:
 
 - `AGENTS.md`
-- `.agent/repo-contract.yml`
+- `.agents/repo-contract.yml`
 - `README.md`
 - `PRD.md`
 - `SRS.md`
 - `requirements.md`
 - `SPEC.md`
-- `docs/`
+- `docs/README.md`
+- `docs/requirements/PRD.md`
+- `docs/requirements/SRS.md`
+- `docs/reports/` only when a task-relevant report is explicitly identified
 - `.github/ISSUE_TEMPLATE/*.yml`
 - `.github/labels.yml`
 
@@ -72,10 +75,12 @@ If the repo uses the standard template, prefer:
 
 - `docs/requirements/SRS.md`
 - `docs/requirements/PRD.md`
-- `.agent/outputs/drafts/github-issues/`
-- `.agent/outputs/reports/`
+- `.agents/outputs/drafts/github-issues/`
+- `.agents/outputs/reports/`
 
 If the repo contract defines different paths, follow the repo contract.
+
+Input selection must exclude `docs/diagrams/` before traversal. Never enumerate, read, search, parse, validate, create, edit, move, or delete anything under it, and never inspect link targets into it. Do not scan all of `docs/` and filter afterward. Treat `.agents/outputs/` as local-only and do not inspect, clean, or archive drafts unless the user explicitly asks to operate on those artifacts; never delete drafts without explicit authorization.
 
 ## Operating Modes
 
@@ -85,14 +90,15 @@ Default mode. Create Markdown issue drafts only.
 
 Default output:
 
-- `.agent/outputs/drafts/github-issues/ISSUE_INDEX.md`
+- `.agents/outputs/drafts/github-issues/ISSUE_INDEX.md`
 - numbered issue draft files such as `001-module-short-title.md`
 
 Draft mode must not create real issues, update Projects, create labels, create branches, commit changes, or modify code unless explicitly asked.
 
 When regenerating drafts:
 
-- Clean or archive stale draft files first.
+- Operate only on explicitly identified draft files and index entries. Do not enumerate `.agents/outputs/` to discover files.
+- Do not clean, delete, or archive stale draft files without explicit authorization.
 - Ensure every draft file listed in `ISSUE_INDEX.md` exists.
 - Ensure every `.md` draft file in the final draft directory is referenced by `ISSUE_INDEX.md`.
 - Do not leave stale, duplicate, or unreferenced drafts.
@@ -240,7 +246,7 @@ Do not print full issue bodies in chat unless the user asks.
 
 Draft mode:
 
-- `.agent/outputs/drafts/github-issues/ISSUE_INDEX.md`
+- `.agents/outputs/drafts/github-issues/ISSUE_INDEX.md`
 - numbered draft files
 
 Reference templates:

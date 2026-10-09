@@ -1,3 +1,10 @@
+> **Document:** Hướng Dẫn Đóng Góp\
+> **File:** `CONTRIBUTING.md`\
+> **Version:** v1.1.0\
+> **Created:** 2026-06-14\
+> **Last Updated:** 2026-10-09\
+> **Status:** Template\
+
 # Hướng Dẫn Đóng Góp
 
 Tài liệu này cung cấp các quy định và hướng dẫn chi tiết về cách đóng góp mã nguồn (code), cách viết thông điệp ghi nhận thay đổi (commit message), cách đặt tên nhánh (branch) và quy trình gửi yêu cầu gộp mã nguồn (pull request) cho dự án. Việc tuân thủ các quy tắc này giúp dự án luôn sạch sẽ, dễ bảo trì và làm việc nhóm hiệu quả hơn.
@@ -14,6 +21,8 @@ Tài liệu này cung cấp các quy định và hướng dẫn chi tiết về 
 * **Cập nhật tài liệu đầy đủ:** Nếu thay đổi của bạn ảnh hưởng đến cách cài đặt, cấu hình hoặc sử dụng dự án, hãy cập nhật lại tài liệu hướng dẫn liên quan.
 * **Kiểm tra kỹ trước khi push code:** Hãy chắc chắn rằng mã nguồn được biên dịch thành công và chạy thử không gặp lỗi trước khi đẩy lên GitHub.
 
+Các lệnh build và kiểm thử phụ thuộc vào lựa chọn của từng dự án; hãy ghi rõ kiểm tra nào phù hợp hoặc không áp dụng. Không mặc định framework, DBMS hoặc công cụ migration. Không commit secret, dữ liệu riêng tư, cấu hình local, file build, log hoặc `.agents/outputs/`. Tuân thủ ranh giới bảo vệ tài liệu trong `AGENTS.md` và `.agents/POLICY.md`.
+
 **Giải thích thuật ngữ:**
 * **Commit** (lần lưu): Hành động lưu lại trạng thái thay đổi của các file mã nguồn vào lịch sử Git tại máy cá nhân.
 * **Push** (đẩy code): Hành động gửi các commit từ máy tính cá nhân (local) lên kho lưu trữ trực tuyến trên GitHub.
@@ -23,10 +32,10 @@ Tài liệu này cung cấp các quy định và hướng dẫn chi tiết về 
 
 ## Quy Tắc Đặt Tên Branch
 
-**Branch** (nhánh) là một nhánh mã nguồn độc lập được tách ra từ nhánh chính (như `main` hoặc `master`) để phát triển tính năng hoặc sửa lỗi mà không làm ảnh hưởng trực tiếp đến mã nguồn hiện tại của dự án.
+**Branch** (nhánh) là một nhánh mã nguồn độc lập. Trong quy trình dùng chung của template, `main` là nhánh ổn định, `develop` là nhánh tích hợp; nhánh công việc được tạo từ `develop` mới nhất.
 
 Khi làm việc, bạn cần tạo nhánh mới và đặt tên theo cấu trúc:
-`[loại-nhánh]/[tên-ngắn-gọn]`
+`[loại-nhánh]/[tên-ngắn-gọn]` (kebab-case)
 
 ### Các tiền tố nhánh thông dụng:
 * **`feature/`**: Sử dụng khi phát triển một tính năng mới.
@@ -200,13 +209,13 @@ chore: cập nhật .gitignore
 
 ## Quy Tắc Pull Request
 
-**Pull Request** (yêu cầu gộp code / PR) là cách bạn yêu cầu những người quản lý dự án xem xét và gộp mã nguồn từ nhánh của bạn vào nhánh chính.
+**Pull Request** (yêu cầu gộp code / PR) là cách bạn yêu cầu người quản lý dự án xem xét và gộp thay đổi từ nhánh công việc vào `develop`. Thay đổi từ `develop` sang `main` cần một pull request riêng đã được review.
 
 Để gửi một pull request thành công:
 1. **Đặt tiêu đề rõ ràng:** Tiêu đề PR nên tuân theo định dạng tương tự commit message (ví dụ: `feat(auth): thêm trang đăng nhập`).
 2. **Mô tả chi tiết nội dung:** Điền đầy đủ thông tin vào mẫu PR, mô tả rõ các thay đổi bạn đã thực hiện và lý do thay đổi.
 3. **Liên kết Issue:** Sử dụng các từ khóa như `Closes #123` để tự động đóng issue liên quan khi PR được gộp.
-4. **Kiểm tra hoạt động:** Chắc chắn rằng dự án của bạn vẫn chạy được và không làm hỏng các tính năng cũ.
+4. **Kiểm tra hoạt động:** Chạy các kiểm tra phù hợp với thay đổi và ghi rõ kết quả; không áp dụng một lệnh build/test cố định cho mọi dự án.
 5. **Dọn dẹp code:** Đảm bảo không có code thừa, comment nháp hay các file rác trước khi gửi PR.
 
 ---
@@ -215,8 +224,10 @@ chore: cập nhật .gitignore
 
 Trước khi thực hiện lệnh `git push` để đẩy code lên GitHub, hãy kiểm tra danh sách sau:
 
-- [ ] Code đã biên dịch và chạy thành công trên máy cá nhân.
+- [ ] Đã chạy các kiểm tra phù hợp với dự án; ghi rõ kiểm tra thất bại hoặc không thể chạy.
 - [ ] Không có file rác, file build tạm hoặc file cấu hình cá nhân trong danh sách commit.
 - [ ] Tất cả các commit message đều tuân thủ đúng định dạng Conventional Commits.
 - [ ] Tài liệu hướng dẫn liên quan đã được cập nhật đầy đủ (nếu có thay đổi cách sử dụng).
 - [ ] Các tập tin script cơ sở dữ liệu đã được cập nhật đầy đủ (nếu có thay đổi schema database).
+- [ ] Không đưa nội dung thuộc vùng được bảo vệ hoặc `.agents/outputs/` vào commit.
+- [ ] Không tự đổi default branch hoặc Rulesets.

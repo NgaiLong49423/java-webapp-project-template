@@ -3,9 +3,9 @@ name: document-metadata-standardizer
 description: Use this skill when the user asks to add, update, audit, or standardize metadata at the top of Markdown documentation files, including document version, created date, last updated date, status, and version bump decisions after document edits.
 risk: low
 source: self
-version: v1.1.0
+version: v1.2.0
 created_date: 2026-06-29
-last_updated_date: 2026-06-29
+last_updated_date: 2026-10-09
 ---
 
 # Document Metadata Standardizer
@@ -30,11 +30,23 @@ Target files:
 ```text
 CONTRIBUTING.md
 AGENTS.md
-docs/**/*.md
-database/**/*.md
-.github/**/*.md
-.agent/**/*.md
+README.md
+CHANGELOG.md
+docs/README.md
+docs/requirements/*.md
+docs/reports/*.md
+docs/template-maintenance.md
+database/*.md
+.github/ISSUE_TEMPLATE/*.md
+.github/*.md
+.agents/POLICY.md
+.agents/skills/*/SKILL.md
+.agents/skills/*/references/*.md
 ```
+
+Select only these explicit paths and directories before traversal. Never recursively scan `docs/` or `.agents/`. Exclude `docs/diagrams/` and `.agents/outputs/` before file selection or traversal; never list, read, validate, create, edit, move, or delete files there. Do not open or validate link targets that point into `docs/diagrams/`.
+
+Use document metadata only for project documentation. Skills use their YAML frontmatter; workflows, scripts, and configuration use metadata appropriate to their function.
 
 Do not apply to code, generated outputs, binaries, archives, SQL/YAML/XML configs, or dependency/build folders unless explicitly requested.
 
@@ -152,7 +164,7 @@ v1.0.2 -> v1.0.3
 v0.2.0 -> v0.2.1
 ```
 
-Use PATCH for typo/grammar fixes, formatting cleanup, metadata correction, broken link fixes, local path fixes, small wording clarification, or folder name correction such as `agent/` to `.agent/`.
+Use PATCH for typo/grammar fixes, formatting cleanup, metadata correction, broken link fixes, local path fixes, small wording clarification, or folder name correction such as `agent/` to `.agents/`.
 
 ### MINOR
 
@@ -182,7 +194,7 @@ Use MAJOR for core scope changes, replacing/removing major requirements, archite
 ## Date Rules
 
 - Preserve `Created` if it exists.
-- If `Created` is missing, infer from file history, changelog, repo creation, or current date.
+- If `Created` is missing on an existing file, use reliable file-specific Git history. If no reliable evidence exists, leave it unresolved and report/ask; do not use today's date as a substitute. Use the current date only for a newly created document.
 - If inferred, state that it was inferred.
 - Use the current edit date for `Last Updated`, unless the user provides a specific date.
 - Convert dates to `YYYY-MM-DD`.
